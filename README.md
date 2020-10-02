@@ -29,6 +29,12 @@ Steps to run the Project:
     
     from the first link , after download, copy java path and add it here.
     
+##Alternate Instruction: 
+    
+    install jdk from java official website
+    install intellij
+    run main file directly
+    DO not forget to update the path for testout.txt input file
     
 
 
