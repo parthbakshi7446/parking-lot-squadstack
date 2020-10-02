@@ -22,9 +22,10 @@ Steps to run the Project:
     
     3) cd parking-lot-squadstack
     
-    4) JAVAPATH(UPDATEYOURSELF) -Dfile.encoding=UTF-8 -classpath /home/nimish/IdeaProjects/parking-lot-squadstack/out/production/parking-lot-project com.company.Main
+    4) run: <JAVAPATH> -Dfile.encoding=UTF-8 -classpath <git-repo-path> com.company.Main
     
-    EXAMPLE:/home/parth/.jdks/liberica-14.0.2/bin/java 
+    EXAMPLE:
+        /home/parth/.jdks/liberica-14.0.2/bin/java -Dfile.encoding=UTF-8 -classpath /home/parth/IdeaProjects/parking-lot-squadstack/out/production/parking-lot-project com.company.Main
     
     from the first link , after download, copy java path and add it here.
     
