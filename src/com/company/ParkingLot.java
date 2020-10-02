@@ -21,6 +21,11 @@ public class ParkingLot {
         slots = new ParkingSlot[slotsCount + 1];
     }
 
+    /**
+     * @param regNo is the number of the vehicle
+     * @param age of the person driving vehicle
+     * user will call this function
+     */
     public void parkVehicle(String regNo, int age) throws Exception {
         if (ageGroupArray[age] == null) {
             ageGroupArray[age] = new AgeGroup(age);
@@ -36,6 +41,10 @@ public class ParkingLot {
         int availableSlot = getFirstAvailableSlot();
         slots[availableSlot] = new ParkingSlot(vehicle, ageGroup, availableSlot);
         vehicle.slot = slots[availableSlot];
+        if(vehicleHashMap.containsKey(vehicle.registrationNumber)){
+            System.out.println("Car with vehicle registration number “" + vehicle.registrationNumber + "” has alreadybeen inside");
+            return;
+        }
         vehicleHashMap.putIfAbsent(vehicle.registrationNumber, vehicle);
         ageGroup.addVehicle(vehicle);
         System.out.println("Car with vehicle registration number “" + vehicle.registrationNumber + "” has been parked at slot number " + availableSlot);
@@ -58,6 +67,7 @@ public class ParkingLot {
 
     /**
      * using MEX
+     * operation Time Complexity: O(n) where n is number of slots in parking lot
      */
     public int getFirstAvailableSlot() throws Exception {
         for (int i = 1; i <= noOfSlots; i++) {
@@ -70,6 +80,7 @@ public class ParkingLot {
 
     /**
      * print all the vehicles parked by people of given age
+     * Fetching Data in O(1) Time
      */
     public ArrayList<String> getVehiclesFromAge(int age) throws Exception {
         ArrayList<String> result = new ArrayList<>();
@@ -88,6 +99,7 @@ public class ParkingLot {
 
     /**
      * Returns the slot number of a vehicle where it is parked , provide registration numer of vehicle
+     * Fetching Data in O(1) Time
      */
     public int getSlotNumberFromVehicle(String regNo) throws Exception {
         return vehicleHashMap.get(regNo).slot.id;
@@ -95,6 +107,7 @@ public class ParkingLot {
 
     /**
      * prints parking slots for the given age of people parked their cars into those slots
+     * Fetching data in O(1) Time
      */
     public ArrayList<Integer> getParkingSlotsFromAge(int age) throws Exception {
         ArrayList<Integer> result = new ArrayList<>();

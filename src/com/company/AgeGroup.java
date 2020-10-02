@@ -3,7 +3,7 @@ package com.company;
 import java.util.ArrayList;
 
 /**
- *
+ * this class stores info of the person age parking his vehicle in parking lot
  */
 public class AgeGroup {
     public int age;
