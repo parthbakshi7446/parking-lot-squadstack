@@ -38,13 +38,13 @@ public class ParkingLot {
      * Parks the given vehicle with given driver age.
      */
     public void parkVehicleInternal(Vehicle vehicle, AgeGroup ageGroup) throws Exception {
-        int availableSlot = getFirstAvailableSlot();
-        slots[availableSlot] = new ParkingSlot(vehicle, ageGroup, availableSlot);
-        vehicle.slot = slots[availableSlot];
         if(vehicleHashMap.containsKey(vehicle.registrationNumber)){
             System.out.println("Car with vehicle registration number “" + vehicle.registrationNumber + "” has alreadybeen inside");
             return;
         }
+        int availableSlot = getFirstAvailableSlot();
+        slots[availableSlot] = new ParkingSlot(vehicle, ageGroup, availableSlot);
+        vehicle.slot = slots[availableSlot];
         vehicleHashMap.putIfAbsent(vehicle.registrationNumber, vehicle);
         ageGroup.addVehicle(vehicle);
         System.out.println("Car with vehicle registration number “" + vehicle.registrationNumber + "” has been parked at slot number " + availableSlot);
