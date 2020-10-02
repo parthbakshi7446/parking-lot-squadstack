@@ -69,7 +69,7 @@ public class ParkingLot {
     }
 
     /**
-     *
+     * print all the vehicles parked by people of given age
      */
     public ArrayList<String> getVehiclesFromAge(int age) throws Exception {
         ArrayList<String> result = new ArrayList<>();
@@ -87,14 +87,14 @@ public class ParkingLot {
     }
 
     /**
-     * Returns the slot number of a vehicle where it is parked
+     * Returns the slot number of a vehicle where it is parked , provide registration numer of vehicle
      */
     public int getSlotNumberFromVehicle(String regNo) throws Exception {
         return vehicleHashMap.get(regNo).slot.id;
     }
 
     /**
-     *
+     * prints parking slots for the given age of people parked their cars into those slots
      */
     public ArrayList<Integer> getParkingSlotsFromAge(int age) throws Exception {
         ArrayList<Integer> result = new ArrayList<>();

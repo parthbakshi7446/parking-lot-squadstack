@@ -31,8 +31,8 @@ public class Main {
         } else if (command.equals("Leave")) {
             int slotNumber = Integer.parseInt(arrayOfStrings[1]);
             parkingLot.vacateSlot(slotNumber);
-
-
+        } else{
+            System.out.println("Wrong Command");
         }
     }
 
