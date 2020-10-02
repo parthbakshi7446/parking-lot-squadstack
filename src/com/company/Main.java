@@ -38,7 +38,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        FileReader fr = new FileReader(".\\testout.txt");
+        FileReader fr = new FileReader("./testout.txt");
         BufferedReader br = new BufferedReader(fr);
         String line;
         while ((line = br.readLine()) != null) {
